@@ -16,10 +16,8 @@ class TestSmokeTest():
   def setup_method(self, method):
     chrome_options = Options()
     chrome_options.add_argument("--headless")  # Uncomment if you want to run tests in headless mode
-    chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--disable-dev-shm-usage")
     service = Service(r"../chromedriver.exe")
-    self.driver = webdriver.Chrome(service=service, options=chrome_options)
+    self.driver = webdriver.Chrome()
     self.vars = {}
   
   def teardown_method(self, method):
